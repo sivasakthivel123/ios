@@ -1,0 +1,27 @@
+3.11 Value Type vs Reference Type
+struct ValueData {
+    var number: Int
+}
+class ReferenceData {
+    var number: Int
+
+    init(number: Int) {
+        self.number = number
+    }
+}
+var originalStruct = ValueData(number: 10)
+var copiedStruct = originalStruct
+copiedStruct.number = 20
+
+print(originalStruct.number)
+print(copiedStruct.number)
+
+let originalClass = ReferenceData(number: 10)
+let copiedClass = originalClass
+copiedClass.number = 20
+
+print(originalClass.number)
+print(copiedClass.number)
+
+// Struct copies are independent values.
+// Class variables can refer to the same object.
