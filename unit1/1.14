@@ -1,0 +1,20 @@
+ 1.14 Simple Calculator Using Switch
+let x = 20.0
+let y = 5.0
+let op = "/"
+switch op {
+case "+":
+    print(x + y)
+case "-":
+    print(x - y)
+case "*":
+    print(x * y)
+case "/":
+    if y != 0 {
+        print(x / y)
+    } else {
+        print("Division by zero is not allowed")
+    }
+default:
+    print("Invalid Operator")
+}
