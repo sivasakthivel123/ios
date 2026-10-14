@@ -1,0 +1,41 @@
+ 3.17 Mini Project - Student Management System
+enum Grade {
+    case A, B, C, D, F
+}
+struct SchoolStudent {
+    var name: String
+    var rollNumber: Int
+    var marks: Int
+    var grade: Grade {
+        switch marks {
+        case 90...100: return .A
+        case 80..<90: return .B
+        case 70..<80: return .C
+        case 40..<70: return .D
+        default: return .F
+        }
+    }
+}
+class School {
+    var students: [SchoolStudent] = []
+    func addStudent(_ student: SchoolStudent) {
+        students.append(student)
+    }
+    func printReport() {
+        let sortedStudents = students.sorted {
+            $0.marks > $1.marks
+        }
+
+        print("Student Report")
+
+        for student in sortedStudents {
+            print("Name: \(student.name), Roll No: \(student.rollNumber), Marks: \(student.marks), Grade: \(student.grade)")
+        }
+    }
+}
+let school = School()
+school.addStudent(SchoolStudent(name: "Arun", rollNumber: 101, marks: 85))
+school.addStudent(SchoolStudent(name: "Kumar", rollNumber: 102, marks: 95))
+school.addStudent(SchoolStudent(name: "Ravi", rollNumber: 103, marks: 65))
+
+school.printReport()
