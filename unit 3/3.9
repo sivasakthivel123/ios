@@ -1,0 +1,19 @@
+ 3.9 Enum PaymentMethod with Associated Values
+enum PaymentMethod {
+    case cash
+    case card(number: String)
+    case upi(id: String)
+}
+func pay(using method: PaymentMethod) {
+    switch method {
+    case .cash:
+        print("Paid using cash")
+    case .card(let number):
+        print("Paid using card: \(number)")
+    case .upi(let id):
+        print("Paid using UPI: \(id)")
+    }
+}
+pay(using: .cash)
+pay(using: .card(number: "1234"))
+pay(using: .upi(id: "user@upi"))
