@@ -1,0 +1,24 @@
+ 3.12 Vehicle, Car and Bike Inheritance
+class Vehicle {
+    func description() {
+        print("This is a vehicle")
+    }
+}
+
+class CarVehicle: Vehicle {
+    override func description() {
+        print("This is a car")
+    }
+}
+
+class Bike: Vehicle {
+    override func description() {
+        print("This is a bike")
+    }
+}
+
+let vehicles: [Vehicle] = [CarVehicle(), Bike(), Vehicle()]
+
+for vehicle in vehicles {
+    vehicle.description()
+}
