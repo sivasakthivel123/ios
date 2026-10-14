@@ -1,0 +1,19 @@
+ 1.16 Right-Angled Triangle Pattern
+let rows = 5
+for i in 1...rows {
+    for _ in 1...i {
+        print("*", terminator: "")
+    }
+    print()
+}
+
+ 1.16 Variation: Skip Even Rows Using Continue
+for i in 1...rows {
+    if i % 2 == 0 {
+        continue
+    }
+    for _ in 1...i {
+        print("*", terminator: "")
+    }
+    print()
+}
