@@ -1,0 +1,12 @@
+import Foundation
+// Create an array with three products
+var shoppingCart = ["Apple", "Milk", "Bread"]
+// Add a new product
+shoppingCart.append("Eggs")
+// Insert a product at index 1
+shoppingCart.insert("Rice", at: 1)
+// Remove a product at index 2
+shoppingCart.remove(at: 2)
+// Display the final shopping cart
+print("Final Shopping Cart:", shoppingCart)
+print("Total Items:", shoppingCart.count)
